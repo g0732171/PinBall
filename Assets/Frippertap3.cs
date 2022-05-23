@@ -43,6 +43,7 @@ public class Frippertap3 : MonoBehaviour
         for(var i=0; i< Input.touchCount; i++)
         {
 
+
             if (i == 0)
             {
                 if (Input.GetTouch(i).phase == TouchPhase.Began)
@@ -104,10 +105,9 @@ public class Frippertap3 : MonoBehaviour
 
                 }
 
-
-                if (Input.GetTouch(i).phase == TouchPhase.Ended)
+                if (Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
-                    if (Input.GetTouch(i).position.x < 540)
+                    if (Input.GetTouch(0).position.x < 540)
                     {
 
                         if (tag == "leftfrippertag")
@@ -115,13 +115,34 @@ public class Frippertap3 : MonoBehaviour
 
                     }
 
-                    else if (Input.GetTouch(i).position.x >= 540)
+                    else if (Input.GetTouch(0).position.x >= 540)
                     {
                         if (tag == "rightfrippertag")
                         { SetAngle(this.defaultAngle); }
 
                     }
                 }
+
+                if (Input.GetTouch(1).phase == TouchPhase.Ended)
+                {
+                    if (Input.GetTouch(1).position.x < 540)
+                    {
+
+                        if (tag == "leftfrippertag")
+                        { SetAngle(this.defaultAngle); }
+
+                    }
+
+                    else if (Input.GetTouch(1).position.x >= 540)
+                    {
+                        if (tag == "rightfrippertag")
+                        { SetAngle(this.defaultAngle); }
+
+                    }
+                }
+
+
+
 
 
             }
