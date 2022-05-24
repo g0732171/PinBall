@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class Totalscore6 : MonoBehaviour
 {
-    public int totalscore;
-    public int smallstarscore;
-    public int largestarscore;
-    public int cloudscore;
+    int totalscore;
     private GameObject TotalScoreText;
 
 
@@ -16,40 +13,28 @@ public class Totalscore6 : MonoBehaviour
     {
         if (other.gameObject.tag == "SmallStarTag")
         {
-
-            smallstarscore += 10;
-
+            totalscore += 10;
         }
         
 
         else if (other.gameObject.tag == "LargeStarTag") 
         {
-
-            largestarscore += 20;
-
+            totalscore += 20;
         }
 
 
         else if (other.gameObject.tag == "SmallCloudTag" || other.gameObject.tag == "LargeCloudTag")
         {
-
-            cloudscore += 30;
-
+            totalscore += 30;
         }
-        
-        this.totalscore = this.smallstarscore + this.largestarscore + this.cloudscore;
+               
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-
-
         this.TotalScoreText = GameObject.Find("ScoreText");
-
-
     }
 
     // Update is called once per frame
@@ -58,7 +43,6 @@ public class Totalscore6 : MonoBehaviour
 
         if (this.totalscore >= 0)
         {
-
             this.TotalScoreText.GetComponent<Text>().text = ("Score=" + this.totalscore);
         }
 
