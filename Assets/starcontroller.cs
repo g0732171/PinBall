@@ -5,19 +5,19 @@ using UnityEngine;
 public class starcontroller : MonoBehaviour
 {
     // 回転速度
-    private float rotSpeed = 0.5f;
+    private float rotSpeed = 6.2832f;
 
     // Use this for initialization
     void Start()
     {
         //回転を開始する角度を設定
-        this.transform.Rotate(0, Random.Range(0, 360), 0);
+        this.transform.Rotate(0, 6, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         //回転
-        this.transform.Rotate(0, this.rotSpeed, 0);
+        //this.transform.Rotate(0, this.rotSpeed, 0);
     }
 }

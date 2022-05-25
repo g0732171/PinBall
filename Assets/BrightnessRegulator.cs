@@ -27,7 +27,7 @@ public class BrightnessRegulator : MonoBehaviour
         {
             this.defaultColor = Color.white;
         }
-        else if (tag == "LargeStarTag")
+       else if (tag == "LargeStarTag")
         {
             this.defaultColor = Color.yellow;
         }

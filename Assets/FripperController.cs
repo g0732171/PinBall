@@ -19,7 +19,7 @@ public class FripperController : MonoBehaviour
         this.myHingeJoint = GetComponent<HingeJoint>();
 
         //フリッパーの傾きを設定
-        SetAngle(this.defaultAngle);
+        SetAngle1(this.defaultAngle);
     }
 
     // Update is called once per frame
@@ -27,46 +27,46 @@ public class FripperController : MonoBehaviour
     {
 
         //左矢印キーを押した時左フリッパーを動かす
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A) )
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             if (tag == "leftfrippertag")
-            { SetAngle(this.flickAngle); }
+            { SetAngle1(this.flickAngle); }
         }
         //右矢印キーを押した時右フリッパーを動かす
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) )
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             if (tag == "rightfrippertag")
-            { SetAngle(this.flickAngle); }
+            { SetAngle1(this.flickAngle); }
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             if (tag == "leftfrippertag" || tag == "rightfrippertag")
-            {SetAngle(this.flickAngle);}
+            {SetAngle1(this.flickAngle);}
         }
 
         //矢印キー離された時フリッパーを元に戻す
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
             if (tag == "leftfrippertag")
-            { SetAngle(this.defaultAngle); }
+            { SetAngle1(this.defaultAngle); }
         }
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
             if (tag == "rightfrippertag")
-            { SetAngle(this.defaultAngle); }
+            { SetAngle1(this.defaultAngle); }
         }
         if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)) 
         {
             if (tag == "leftfrippertag" || tag == "rightfrippertag")
             {
-                SetAngle(this.defaultAngle);
+                SetAngle1(this.defaultAngle);
             }
         }
     }
 
     //フリッパーの傾きを設定
-    public void SetAngle(float angle)
+    public void SetAngle1(float angle)
     {
         JointSpring jointSpr = this.myHingeJoint.spring;
         jointSpr.targetPosition = angle;
